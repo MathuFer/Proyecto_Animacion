@@ -1,0 +1,398 @@
+body{
+    font-family: 'Arapey';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #20262E;
+
+    background-color: #20262E;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+}
+
+header img{
+    width: 400px;
+    height: 150px;
+    object-fit: cover;
+    background-color: white;
+    /* border: #FFC0D9 1px solid; */
+    /* border-radius: 10px; */
+}
+
+.buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buscador label{
+    padding: 5px;
+    font-size: x-large;
+}
+.buscador input{
+    width: 60%;
+    padding: 10px;
+}
+
+.buscador i{
+    padding: 10px;
+    font-size: x-large;
+    color: #20262E;
+}
+
+i:hover{
+    background-color: #20262E;
+    color: #FFC0D9;
+    border-radius: 50%;
+}
+
+nav{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav p:hover{
+    color: white;
+    text-decoration:underline;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+}
+
+form button{
+    padding: 1px;
+    margin: 5px;
+    font-size: small;
+}
+
+
+nav{
+    background-color: #FFC0D9;
+    padding: 10px;
+}
+
+nav p{
+    margin: 0px;
+}
+
+main{
+    display: grid;
+    background-color:#20262E;
+    height: 100vh;
+    grid-template-areas:  
+    'menu catalogo';
+    grid-template-columns: 1fr 8fr;
+}
+
+menu{
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    justify-content: s;
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+}
+
+menu h3{
+    text-align: center;
+}
+
+menu ul{
+    padding: 0px;
+}
+
+menu li{
+    list-style: none;
+    margin: 0px;
+    padding: 10px;
+}
+
+menu img{
+    width: 100px;
+    border: #FFC0D9 1px solid;
+    align-self: center;
+    margin-top: 250% ;
+}
+
+li:hover{
+    color: #FFC0D9;
+}
+.catalogo{
+    display: grid;
+    grid: catalogo;
+    background-color:#20262E;
+    margin: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 10px;
+    overflow: scroll;
+}
+
+.card{
+    display: flex;
+    position: relative;
+    height: 400px;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: white ;
+    border: 2px solid #FFC0D9;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img{
+    border: 1px solid #FFC0D9;
+    width: 65%;
+    object-fit:contain;
+}
+
+.card .info{
+    position: absolute;
+    top: 45%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    background-color: #FFC0D9;
+    font-size: large;
+    color: #20262E;
+    opacity: 0;
+    width: 50%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@media screen and (max-width:576px) {
+    .card .info{
+        background-color: #FFC0D9;
+        font-size: small;
+        color: 20262E;
+    }
+}
+
+.card:hover .info{
+    opacity: 1;
+}
+ 
+.card div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: x-large;
+    background-color: #FFC0D9;
+    padding: 20px;
+    width: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.01); /* Escalar la card ligeramente */
+  }
+
+.card h3{
+    margin: 0px;
+}
+
+.card p{
+    margin: 0px;
+}
+
+
+button{
+    margin: 0px;
+    background-color: white;
+    border: 1px solid #ff69a5;
+    padding: 10px;
+    width: 80%;
+    font-size: large;
+}
+
+button:hover{
+    background-color:#20262E;
+    color:#FFC0D9;
+}
+
+footer{
+    display: grid;
+    grid-template-areas: 
+    "redes contacto";
+    justify-content: space-evenly;
+    background-color: #FFC0D9;
+    text-align: center;
+}
+
+footer .redes{
+    grid-area: redes;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: medium;
+}
+
+
+footer form{
+    grid-template-areas: contacto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+footer form input{
+    width: 100%;
+}
+footer i:hover{
+    color: #ff69a5;
+    background-color: #FFC0D9;
+}
+
+@media screen and (max-width:576px) {
+    body{
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer"
+        ;
+    }
+
+    header{
+        grid-area:header;
+        display: grid;
+        grid-template-areas: 
+        "logo logo sesion"
+        "buscador buscador buscador";
+    }
+
+    header img{
+        grid-area: logo;
+        width: 300px;
+    }
+
+    .buscador{
+        grid-area: buscador;
+        font-size: x-small;
+    }
+
+    .sesion{
+        grid-area: sesion;
+    }
+    nav{
+        grid-area: nav;
+    }
+    
+    main{
+        grid-area: main;
+        display: grid;
+        grid-template-areas:
+        "menu menu"
+        "catalogo catalogo";
+    }
+
+    menu{
+        grid-area: menu;
+        display: grid;
+        justify-content: space-around;
+        align-items: center;
+        grid-template-areas:
+        "titulo titulo logo"
+        "menu menu logo" ;
+    }
+
+    menu h3{
+        grid-area: titulo;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    menu ul{
+        display: none;
+    }
+
+    menu select{
+        grid-area: menu;
+        width: 100%;
+    }
+
+    menu img{
+        grid-area: logo;
+        width: 100px;
+        border: #FFC0D9 1px solid;
+        align-self: center;
+        margin-top: 0px;
+    }
+
+    .catalogo{
+        grid-area: catalogo;
+    }
+
+    .catalogo{
+        margin: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    
+    
+    .card div{
+        justify-content: center;
+        font-size: medium;
+        background-color: #FFC0D9;
+        padding: 5px;
+        width: 20%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .card h3{
+        padding: 10px;
+    }
+    
+    .card p{
+        padding: 10px;
+        font-size: larger;
+    }
+    
+    
+    button{
+        margin: 5px;
+        padding: 5px;
+        font-size: medium;
+    }
+
+    footer{
+        grid-area: footer;
+        grid-template-areas: 
+        "contacto"
+        "redes";
+    }
+
+}
+
+
+
+@media screen and (min-width:576px) {
+    menu select{
+        display: none;
+    }
+}
+
+@font-face {
+    font-family: 'Arapey';
+    src: url(./font/Arapey-Regular.ttf) format('truetype');
+}
